@@ -32,7 +32,7 @@ RUN wget https://go.dev/dl/go${GOVERSION}.linux-amd64.tar.gz && \
     rm go${GOVERSION}.linux-amd64.tar.gz
 
 # Copy src
-WORKDIR /src
+WORKDIR /workdir
 COPY . .
 
 CMD ["/bin/bash"]
