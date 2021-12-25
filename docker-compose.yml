@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  system-programming-in-go:
+    image: system-programming-in-go
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    tty: true
+    volumes:
+      - .:/src
