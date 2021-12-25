@@ -21,7 +21,8 @@ RUN apt-get update && \
         wget \
         # ref: https://qiita.com/shimacpyon/items/1af6d1ed69f6ad54c73c
         ca-certificates \
-        strace && \
+        strace \
+	python3.9 && \
     apt-get clean
 
 # Install Go
