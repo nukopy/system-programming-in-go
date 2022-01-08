@@ -19,7 +19,7 @@ make dcb
 make dcin
 ```
 
-You can develop in the Docker container with ["Remote - Containers"](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) on VSCode. It makes it easier to debug.
+You can develop in the Docker container with ["Remote - Containers"](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) on VSCode. It makes it easier to develop.
 
 ## References
 
