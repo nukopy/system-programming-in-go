@@ -10,7 +10,7 @@ Development is done on Ubuntu 20.04 on Docker.
 
 - Docker 20.10.8
 - Docker Compose 1.29.2
-- Go 1.18 beta
+- Go 1.18
 
 ### Setup
 
