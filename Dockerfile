@@ -7,7 +7,7 @@ ENV PATH $PATH:/usr/local/go/bin
 
 # Setting envs related to GOENV
 ENV GOOS linux
-ENV GOVERSION 1.18beta1
+ENV GOVERSION 1.18
 ENV GOARCH amd64
 ENV CGO_ENABLED 0
 ENV GO111MODULE on
