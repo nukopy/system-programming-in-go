@@ -3,12 +3,14 @@ package main
 import (
 	"bytes"
 	"compress/gzip"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net"
 	"net/http"
 	"os"
 	"strings"
+	"time"
 )
 
 /* interface: io.Writer
@@ -34,10 +36,14 @@ func main() {
 
 	// 2.4.5 インターネットアクセスの送信
 	internetAccess()
-	httpServer()
+	// httpServer()
 
 	// 2.4.6 io.Writer のデコレータ
 	gzipSample()
+
+	// 2.4.7 フォーマットしてデータを io.Writer に書き出す
+	fprintfSample()
+	jsonOutputSample()
 }
 
 /* インタフェース io.Writer を満たす構造体の例
@@ -127,4 +133,24 @@ func gzipSample() {
 	// writer.Header.Name = "test.txt" // なくても影響しないのだけど何をしている？
 	io.WriteString(writer, "gzip.Writer example\n")
 	writer.Close()
+}
+
+func fprintfSample() {
+	fmt.Fprintf(os.Stdout, "Write with os.Stdout at %v\n", time.Now())
+}
+
+func jsonOutputSample() {
+	// JSON を標準出力とファイルへ同時に吐き出す
+	stdoutWriter := os.Stdout
+	file, err := os.Create("sample.json")
+	if err != nil {
+		panic(err)
+	}
+	multiWriter := io.MultiWriter(stdoutWriter, file)
+	encoder := json.NewEncoder(multiWriter)
+	encoder.SetIndent("", "    ")
+	encoder.Encode(map[string]string{
+		"example": "encoding/json",
+		"hello": "world",
+	})
 }
