@@ -16,6 +16,7 @@ Development is done on Ubuntu 20.04 on Docker.
 
 ```sh
 make dcb
+make dcu
 make dcin
 ```
 
