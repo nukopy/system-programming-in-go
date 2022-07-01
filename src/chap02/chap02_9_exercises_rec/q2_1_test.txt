@@ -1,0 +1,6 @@
+string : Golang
+int    : 1
+float  : 1.190000
+float  : 1
+float  : 1.19
+float  : 1.1900000000
